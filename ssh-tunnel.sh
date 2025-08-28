@@ -22,7 +22,7 @@ SSH_OPTS=(
 if [[ -n "${USE_SSHPASS}" ]]; then
   : "${REMOTE_PASS:?REMOTE_PASS is required when USE_SSHPASS is set}"
   command -v sshpass >/dev/null 2>&1 || { echo "[ERROR] sshpass not installed" >&2; exit 1; }
-  exec sshpass -p "${UNIMAS_PASS}" ssh -o PreferredAuthentications=password "${SSH_OPTS[@]}" "${UNIMAS_USER}@${UNIMAS_HOST}"
+  exec sshpass -p "${REMOTE_PASS}" ssh -o PreferredAuthentications=password "${SSH_OPTS[@]}" "${REMOTE_USER}@${REMOTE_HOST}"
 else
-  exec ssh "${SSH_OPTS[@]}" "${UNIMAS_USER}@${UNIMAS_HOST}"
+  exec ssh "${SSH_OPTS[@]}" "${REMOTE_USER}@${REMOTE_HOST}"
 fi
