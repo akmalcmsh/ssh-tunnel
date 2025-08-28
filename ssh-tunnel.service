@@ -1,0 +1,18 @@
+[Unit]
+Description=RPZDB SSH Tunnel to UNIMAS
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/rpzdb-tunnel-unimas
+ExecStart=/usr/local/bin/rpzdb-tunnel-unimas.sh
+Restart=always
+RestartSec=5s
+User=system
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target
