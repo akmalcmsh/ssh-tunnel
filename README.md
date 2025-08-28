@@ -29,7 +29,7 @@ You can create more instances by creating more env files (e.g., `/etc/default/ss
 Edit your instance env file (e.g., `/etc/default/ssh-tunnel-foobar`):
 
 ```ini
-REMOTE_HOST=tsdb01.dnsvault.net
+REMOTE_HOST=foobar.com
 REMOTE_USER=system
 REMOTE_PORT=5432
 LOCAL_PORT=6996
