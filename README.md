@@ -1,5 +1,11 @@
 # ssh-tunnel
 
+## Requirements
+
+- systemd (Linux)
+- OpenSSH client (`ssh`)
+- Optional: `sshpass` if using password auth (`USE_SSHPASS=1`)
+
 ## Install
 
 ```bash
@@ -51,8 +57,9 @@ journalctl -u ssh-tunnel@foobar -f
 
 ## Notes
 
+- The unit template sets `User=system`. Change this to a local service user that exists on your machine, or remove it and run as root if you know what you're doing.
+
 Connect to the remote DB via the local tunnel
 
 ```bash
 psql -h 127.0.0.1 -p 6996 -U postgres -d db_foobar;
-```
