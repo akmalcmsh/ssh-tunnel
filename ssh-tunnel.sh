@@ -3,7 +3,7 @@
 set -euo pipefail
 umask 077
 
-: "${REMOTE_HOST:=tsdb01.dnsvault.net}"
+: "${REMOTE_HOST:?REMOTE_HOST is required}"
 : "${REMOTE_USER:=system}"
 : "${REMOTE_PORT:=5432}"
 : "${LOCAL_PORT:=6996}"
