@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- systemd (Linux)
+- systemd
 - OpenSSH client (`ssh`)
 - Optional: `sshpass` if using password auth (`USE_SSHPASS=1`)
 
